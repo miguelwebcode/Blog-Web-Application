@@ -1,0 +1,46 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container mb-5">
+  <div class="pb-5 text-center rounded-3 article-body">
+    <% if(selectedArticle) { %>
+    <h1 class="text-body-emphasis" id="article-detail-title">
+      <%= selectedArticle.title %>
+    </h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted article-content">
+      <%= selectedArticle.content %>
+    </p>
+    <div class="buttons-container">
+      <form action="/edit" method="post">
+        <input
+          type="hidden"
+          name="articleId"
+          value="<%= selectedArticle.id %>"
+        />
+        <button
+          type="submit"
+          class="edit-button d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill"
+        >
+          Edit
+        </button>
+      </form>
+      <form action="/delete" method="post">
+        <input
+          type="hidden"
+          name="articleId"
+          value="<%= selectedArticle.id %>"
+        />
+        <button
+          class="btn btn-danger btn-lg px-4 rounded-pill delete-button"
+          type="submit"
+        >
+          Delete
+        </button>
+      </form>
+    </div>
+    <% } else { %>
+    <p id="no-posts-found" class="text-muted">No article found</p>
+    <% } %>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

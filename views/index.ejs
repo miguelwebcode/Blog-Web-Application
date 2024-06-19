@@ -1,0 +1,32 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mb-5 mt-3 header-div">
+      <h1 class="header-h2">Blog Posts</h1>
+    </div>
+  </div>
+  <div class="row article-container">
+    <% if (locals.articles && articles.length > 0) { %> <%
+    articles.forEach(function(article) { %>
+    <div class="col-10 col-sm-8 col-md-5 col-lg-4 article">
+      <h2><%= article.title %></h2>
+      <p class="text-muted article-substring">
+        <%= article.content.substring(0, 100) %>...
+      </p>
+      <form action="/article" method="post">
+        <input type="hidden" name="articleId" value="<%= article.id %>" />
+        <p class="text-muted"><%= article.date %></p>
+        <button type="submit" class="btn-article">Read more</button>
+      </form>
+    </div>
+
+    <% }); %> <% } else { %>
+    <div class="col-md-12">
+      <p id="no-posts-found" class="text-muted">No posts found</p>
+    </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,41 @@
+<%- include('partials/header.ejs') %>
+
+<div id="form-container" class="container">
+  <div class="row">
+    <form
+      id="create-article-form"
+      class="form-signin create-article-form col-sm-12"
+      method="post"
+      action="/create-new-article"
+    >
+      <h1 class="h3 mb-3 font-weight-normal article-form-element">
+        Create new article
+      </h1>
+      <label for="inputTitle" class="sr-only article-form-element">Title</label>
+      <input
+        type="text"
+        name="title"
+        id="inputTitle"
+        class="form-control"
+        placeholder="Article title"
+        required=""
+        autofocus=""
+      />
+      <label for="inputContenido" class="sr-only article-form-element"
+        >Content</label
+      >
+      <textarea
+        id="inputContenido"
+        name="content"
+        class="form-control"
+        placeholder="Article content"
+        rows="5"
+        required=""
+      ></textarea>
+      <button class="btn btn-lg btn-primary article-form-element" type="submit">
+        Create article
+      </button>
+    </form>
+  </div>
+</div>
+<%- include('partials/footer.ejs') %>
