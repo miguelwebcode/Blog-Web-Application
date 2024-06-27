@@ -1,37 +1,36 @@
-¡Por supuesto! A continuación, describo la estructura y el funcionamiento de cada una de las páginas de tu aplicación de blog:
+1. **Home Page:**
 
-1. **Página de inicio (Home):**
-   - **Ruta:** `/` o `/home`
-   - **Funcionalidad:**
-     - Muestra una lista de todas las publicaciones de blog creadas por los usuarios.
-     - Cada publicación se presenta con su título y fecha de creación.
-     - Incluye enlaces para ver detalles completos de cada publicación.
-   - **Vista (EJS):** `home.ejs`
+   - **Route:** `/` or `/home`
+   - **Functionality:**
+     - Displays a list of all blog posts created by users.
+     - Each post is shown with its title and creation date.
+     - Includes links to view full details of each post.
+   - **View (EJS):** `home.ejs`
 
-2. **Página de creación de publicaciones (Create):**
-   - **Ruta:** `/create`
-   - **Funcionalidad:**
-     - Permite a los usuarios escribir una nueva publicación.
-     - Proporciona campos para ingresar el título y el contenido de la publicación.
-     - Al hacer clic en "Publicar", la publicación se agrega temporalmente a la memoria.
-   - **Vista (EJS):** `create.ejs`
+2. **Create Post Page:**
 
-3. **Página de edición de publicaciones (Edit):**
-   - **Ruta:** `/edit/:postId` (donde `:postId` es el ID único de la publicación)
-   - **Funcionalidad:**
-     - Permite a los usuarios editar una publicación existente.
-     - Carga la publicación con el ID proporcionado.
-     - Permite modificar el título y el contenido.
-     - Al hacer clic en "Guardar cambios", actualiza la publicación en memoria.
-     - Permite eliminar la publicación.
-   - **Vista (EJS):** `edit.ejs`
+   - **Route:** `/create`
+   - **Functionality:**
+     - Allows users to write a new blog post.
+     - Provides fields to enter the title and content of the post.
+     - Clicking "Publish" adds the post temporarily in memory.
+   - **View (EJS):** `create.ejs`
 
-4. **Página de detalles de una publicación (View):**
-   - **Ruta:** `/post/:postId` (donde `:postId` es el ID único de la publicación)
-   - **Funcionalidad:**
-     - Muestra los detalles completos de una publicación específica.
-     - Incluye el título, el contenido y la fecha de creación.
-     - Proporciona un enlace para volver a la página de inicio.
-   - **Vista (EJS):** `view.ejs`
+3. **Edit Post Page:**
 
-Recuerda que estas rutas y vistas deben estar configuradas en tu archivo `index.js` y ubicadas en la carpeta `views`. Además, asegúrate de diseñar estilos atractivos para mejorar la experiencia del usuario. ¡Buena suerte con tu proyecto! 😊
+   - **Route:** `/edit/:postId` (where `:postId` is the unique post ID)
+   - **Functionality:**
+     - Allows users to edit an existing blog post.
+     - Loads the post with the provided ID.
+     - Allows modification of the title and content.
+     - Clicking "Save changes" updates the post in memory.
+     - Allows deletion of the post.
+   - **View (EJS):** `edit.ejs`
+
+4. **View Post Details Page:**
+   - **Route:** `/post/:postId` (where `:postId` is the unique post ID)
+   - **Functionality:**
+     - Displays full details of a specific blog post.
+     - Includes the title, content, and creation date.
+     - Provides a link to return to the home page.
+   - **View (EJS):** `view.ejs`
