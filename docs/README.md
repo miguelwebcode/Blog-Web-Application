@@ -8,7 +8,11 @@ To set up and run this Blog Web Application on your local machine, follow these 
 
 **1. Clone the repository:**
 
+```sh
+
 git clone https://github.com/miguelwebcode/Blog-Web-Application.git
+
+```
 
 **2. Navigate to the project directory:**
 
